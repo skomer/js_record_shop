@@ -34,6 +34,7 @@ describe('Record Shop', function() {
         rollerRecords.addRecord(nevermind);
         rollerRecords.addRecord(stoosh);
         assert.equal(2, rollerRecords.stock.length);
+        assert.equal('Nevermind', rollerRecords.stock[0].title);
     });
 
 

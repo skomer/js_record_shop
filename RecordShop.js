@@ -1,4 +1,6 @@
 
+
+
 var RecordShop = function(name, location) {
     this.name = name;
     this.location = location;
@@ -6,6 +8,14 @@ var RecordShop = function(name, location) {
     this.balance = 500;
 }
 
+RecordShop.prototype = {
+    addRecord: function(record) {
+        this.stock.push(record);
+    }
+
+
+
+}
 
 
 
