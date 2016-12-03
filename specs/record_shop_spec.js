@@ -30,7 +30,11 @@ describe('Record Shop', function() {
     it('should have an opening cash balance of £500', function() {
         assert.equal(500, rollerRecords.balance);
     });
-
+    it('should be able to add records to stock', function() {
+        rollerRecords.addRecord(nevermind);
+        rollerRecords.addRecord(stoosh);
+        assert.equal(2, rollerRecords.stock.length);
+    });
 
 
 
