@@ -9,6 +9,7 @@ describe('Record Shop', function() {
     var stoosh;
     var dogManStar;
     var elastica;
+    var dookie;
 
     beforeEach(function() {
         rollerRecords = new RecordShop('Roller Records', 'Edinburgh');
@@ -16,6 +17,7 @@ describe('Record Shop', function() {
         stoosh = new Record('Stoosh', 'Skunk Anansie', 10.99);
         dogManStar = new Record('Dog Man Star', 'Suede', 11.99);
         elastica = new Record('Elastica', 'Elastica', 9.99);
+        dookie = new Record('Dookie', 'Green Day', 12.49);
     });
 
     it('should have a name', function() {
@@ -36,8 +38,29 @@ describe('Record Shop', function() {
         assert.equal(2, rollerRecords.stock.length);
         assert.equal('Nevermind', rollerRecords.stock[0].title);
     });
+    it('should be able to collate the stock in its inventory', function() {
+        rollerRecords.addRecord(nevermind);
+        rollerRecords.addRecord(nevermind);
+        rollerRecords.addRecord(nevermind);
+        rollerRecords.addRecord(stoosh);
+        rollerRecords.addRecord(dogManStar);
+        rollerRecords.addRecord(dogManStar);
+        rollerRecords.collateStock();
 
+    });
+    it('should be able to print its inventory', function() {
+        rollerRecords.addRecord(nevermind);
+        rollerRecords.addRecord(dookie);
+        rollerRecords.addRecord(nevermind);
+        rollerRecords.addRecord(stoosh);
+        rollerRecords.addRecord(dogManStar);
+        rollerRecords.addRecord(dogManStar);
+        rollerRecords.addRecord(elastica);
+        rollerRecords.addRecord(nevermind);
+        rollerRecords.collateStock();
+        rollerRecords.printInventory();
 
+    });
 
 
 
